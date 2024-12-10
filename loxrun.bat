@@ -1,1 +1,1 @@
-java codes.com.craftinginterpreters.lox.Lox %2
+java codes.com.craftinginterpreters.lox.Lox %1

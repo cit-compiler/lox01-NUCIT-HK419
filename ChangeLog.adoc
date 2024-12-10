@@ -12,3 +12,13 @@
 ディレクトリの指定が面倒なので、実行用のバッチファイルを追加しています。相対パス指定なので、構造がそのままであれば実行できるかと思います。
 -ChangeLog.adoc
 -loxrun.bat (ディレクトリ最上層にあります)
+
+==12/10
+BNF記法の練習 教本にあるbreakfast.bnfを写経
+[https://bottlecaps.de/rr/ui]で図で表示・これをxhtmlでダウンロードした。
+こういった細かいファイルをどかしておくためにAnyディレクトリを作成した。
+batファイルの引数指定がズレまくっていたので修正
+-Any(dir)
+-breakfast.bnf
+-diagram.xhtml(download)
+-loxrun.bat(fix)
