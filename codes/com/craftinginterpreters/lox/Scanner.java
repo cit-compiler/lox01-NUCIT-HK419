@@ -145,6 +145,7 @@ class Scanner {
     
         // Trim the surrounding quotes.
         String value = source.substring(start + 1, current - 1);
+        value = value.replace("\\\"","\"");
         addToken(STRING, value);
     }
 
