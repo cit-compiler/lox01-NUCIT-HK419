@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static codes.com.craftinginterpreters.lox.TokenType.*; 
+import static codes.com.craftinginterpreters.lox.TokenType.*;  // [static-import]
 
 class Scanner {
     private final String source;
@@ -128,9 +128,11 @@ class Scanner {
     }
 
     private void string() {
-        while (peek() != '"' && !isAtEnd()) {
-        if (peek() == '\n') line++;
-        advance();
+        char prev = ' ';
+        while ((peek() != '"'  || ( peek() == '"' && prev == '\\')) && !isAtEnd()) {
+            if (peek() == '\n') line++;
+            prev = peek();
+            advance();
         }
     
         if (isAtEnd()) {

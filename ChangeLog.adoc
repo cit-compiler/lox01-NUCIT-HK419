@@ -22,3 +22,7 @@ batファイルの引数指定がズレまくっていたので修正
 -breakfast.bnf
 -diagram.xhtml(download)
 -loxrun.bat(fix)
+
+==12/17
+Scanner.Java stringメソッドにエスケープシーケンスの処理を追加。
+-Scanner.java(fix)
