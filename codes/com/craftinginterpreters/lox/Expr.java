@@ -16,53 +16,53 @@ abstract class Expr {
       this.right = right;
     }
 
-    final Expr left;
-    final Token operator;
-    final Expr right;
-  }
-
     @Override
     <R> R accept(Visitor<R> visitor) {
       return visitor.visitBinaryExpr(this);
     }
+
+    final Expr left;
+    final Token operator;
+    final Expr right;
+  }
   static class Grouping extends Expr {
     Grouping(Expr expression) {
       this.expression = expression;
     }
 
-    final Expr expression;
-  }
-
     @Override
     <R> R accept(Visitor<R> visitor) {
       return visitor.visitGroupingExpr(this);
     }
+
+    final Expr expression;
+  }
   static class Literal extends Expr {
     Literal(Object value) {
       this.value = value;
     }
 
-    final Object value;
-  }
-
     @Override
     <R> R accept(Visitor<R> visitor) {
       return visitor.visitLiteralExpr(this);
     }
+
+    final Object value;
+  }
   static class Unary extends Expr {
     Unary(Token operator, Expr right) {
       this.operator = operator;
       this.right = right;
     }
 
-    final Token operator;
-    final Expr right;
-  }
-
     @Override
     <R> R accept(Visitor<R> visitor) {
       return visitor.visitUnaryExpr(this);
     }
+
+    final Token operator;
+    final Expr right;
+  }
 
   abstract <R> R accept(Visitor<R> visitor);
 }
