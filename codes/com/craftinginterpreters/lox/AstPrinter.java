@@ -1,6 +1,8 @@
 package codes.com.craftinginterpreters.lox;
-
 import java.util.List;
+import codes.com.craftinginterpreters.lox.Expr.Assign;
+import codes.com.craftinginterpreters.lox.Expr.Variable;
+
 
 public class AstPrinter implements Expr.Visitor<String> {
   String print(Expr expr) {
@@ -51,5 +53,17 @@ public class AstPrinter implements Expr.Visitor<String> {
             new Expr.Literal(45.67)));
 
     System.out.println(new AstPrinter().print(expression));
+  }
+
+  @Override
+  public String visitAssignExpr(Assign expr) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'visitAssignExpr'");
+  }
+
+  @Override
+  public String visitVariableExpr(Variable expr) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'visitVariableExpr'");
   }
 }
